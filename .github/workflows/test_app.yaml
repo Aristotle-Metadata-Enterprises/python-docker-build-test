@@ -25,4 +25,4 @@ jobs:
       - name: Copy repo?
         run: pwd && ls -R
       - name: Test app
-        run: ./test/test_app.py
+        run: ./test/test_app.sh
