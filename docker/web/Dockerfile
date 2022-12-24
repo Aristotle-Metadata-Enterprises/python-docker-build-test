@@ -27,8 +27,8 @@ RUN docker/web/scripts/install.sh
 # Temp directory permissions
 RUN chmod -R a+rw /tmp
 
-# # Use created web user by default and for subsequent commands
-# USER web
+# Use created web user by default and for subsequent commands
+USER web
 
 # Run web script
 CMD docker/web/scripts/run_web.sh
