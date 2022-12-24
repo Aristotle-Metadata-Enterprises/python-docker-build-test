@@ -1,4 +1,5 @@
 FROM a7e_hello_app
+USER root
 
 # When set to "True" development python packages will be installed
 ENV install_dev_packages=True
