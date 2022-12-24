@@ -20,7 +20,7 @@ jobs:
     #     username: ${{ secrets.ghcr_user }}
     #     password: ${{ secrets.ghcr_token }}
     steps:
-      - name: Checkout PR
-        uses: actions/checkout@v3
+      # - name: Checkout PR
+      #   uses: actions/checkout@v3
       - name: Copy repo?
         run: pwd && ls
