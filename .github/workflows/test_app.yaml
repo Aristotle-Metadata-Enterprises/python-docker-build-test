@@ -12,7 +12,7 @@ on:
 
 jobs:
   fetch_repo:
-    name: Run tests
+    name: Fetch repo
     runs-on: ubuntu-latest
     steps:
       - name: Checkout PR
@@ -27,6 +27,8 @@ jobs:
           retention-days: 5
 
   run_tests:
+    name: Run tests
+    runs-on: ubuntu-latest
     container:
       image: ghcr.io/aristotle-metadata-enterprises/a7e_hello_app:dev
       credentials:
