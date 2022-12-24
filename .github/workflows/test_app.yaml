@@ -12,7 +12,7 @@ on:
 
 jobs:
   run_tests:
-    name: Linting
+    name: Run tests
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/aristotle-metadata-enterprises/a7e_hello_app:dev
@@ -21,6 +21,6 @@ jobs:
         password: ${{ secrets.ghcr_token }}
     steps:
       - name: Checkout PR
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Copy repo?
         run: pwd && ls
