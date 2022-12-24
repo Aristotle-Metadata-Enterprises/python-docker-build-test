@@ -11,24 +11,7 @@ on:
       - main
 
 jobs:
-  fetch_repo:
-    name: Fetch repo
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout PR
-        uses: actions/checkout@v3
-      - name: Copy repo?
-        run: pwd && ls
-      - name: 'Upload Artifact'
-        uses: actions/upload-artifact@v3
-        with:
-          name: repo_files
-          path: .
-          retention-days: 5
-
   run_tests:
-    needs:
-      - fetch_repo
     name: Run tests
     runs-on: ubuntu-latest
     container:
@@ -37,8 +20,6 @@ jobs:
         username: ${{ secrets.ghcr_user }}
         password: ${{ secrets.ghcr_token }}
     steps:
-      - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v3
       - name: Checkout PR
         uses: actions/checkout@v3
       - name: Copy repo?
