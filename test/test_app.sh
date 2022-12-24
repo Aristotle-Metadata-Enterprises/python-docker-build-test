@@ -1,0 +1,1 @@
+docker run -v $(pwd)/python:/usr/src/app/python --rm -i -t a7e_hello_app:dev bash -c "PYTHONPATH=/usr/src/app/python python -m pytest"
