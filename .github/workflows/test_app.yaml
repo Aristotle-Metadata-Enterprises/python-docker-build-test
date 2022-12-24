@@ -17,12 +17,12 @@ jobs:
     container:
       image: ghcr.io/aristotle-metadata-enterprises/a7e_hello_app:dev
       credentials:
-        username: ${{ secrets.ghcr_user }}
-        password: ${{ secrets.ghcr_token }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout PR
         uses: actions/checkout@v3
       - name: Copy repo?
         run: pwd && ls -R
       - name: Test app
-        run: ./test/test_app.sh
+        run: PYTHONPATH=/usr/src/app/python python -m pytest
